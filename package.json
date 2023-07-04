@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "eCommerce application built with mern stack",
   "type": "module",
-  "main": "serve.js",
+  "main": "server.js",
   "scripts": {
     "start": "node backend/server.js",
     "server": "nodemon backend/server.js",
