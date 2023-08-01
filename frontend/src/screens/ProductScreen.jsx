@@ -18,7 +18,6 @@ const {data: product, isLoading, error } = useGetProductDetailsQuery(productId)
       <Link to='/' className='btn btn-light my-3'>
         Go Back
       </Link>
-      <Message >Hello</Message>
       {isLoading ? (<Loader/>) : error ? (
        <Message variant={'danger'}>{error?.data.message || error.error}</Message>
       ) : ( 
