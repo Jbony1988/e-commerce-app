@@ -128,5 +128,6 @@ export {
   getProductById,
   createProduct,
   updateProduct,
+  createProductReview,
   deleteProduct,
 };
