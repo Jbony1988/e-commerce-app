@@ -5,6 +5,7 @@ import {useNavigate} from 'react-router-dom'
 import logo from "../assets/logo.png";
 import { useSelector, useDispatch } from 'react-redux';
 import {LinkContainer} from "react-router-bootstrap";
+import SearchBox from './SearchBox';
 import {useLogoutMutation} from "../slices/usersApiSlice";
 import {logout} from "../slices/authSlice"
 const Header = () => {
@@ -42,6 +43,7 @@ const Header = () => {
           <Navbar.Toggle />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto justify-content-center">
+            <SearchBox />
               <LinkContainer to='/cart'>
               <Nav.Link href="/cart">
                 <FaShoppingCart />
