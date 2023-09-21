@@ -2,7 +2,6 @@ import React from "react";
 import { Badge, Navbar, Nav, Container, NavDropdown } from "react-bootstrap";
 import { FaShoppingCart, FaUser } from "react-icons/fa";
 import {useNavigate} from 'react-router-dom'
-import logo from "../assets/logo.png";
 import { useSelector, useDispatch } from 'react-redux';
 import {LinkContainer} from "react-router-bootstrap";
 import SearchBox from './SearchBox';
@@ -29,15 +28,25 @@ const Header = () => {
       console.error(err);
     }
   };
+  const customStyles = {
+  navBarStyle: {
+    backgroundColor: '#144960',
+    color: 'white',
+  },
+    cartLogo: {
+      marginRight: 5,
+
+    },
+   
+  };
   return (
     <header>
-      <Navbar bg="dark" variant="dark" expand="lg" collapseOnSelect>
+      <Navbar style={customStyles.navBarStyle}  data-bs-theme="dark"    expand="lg" collapseOnSelect>
         <Container>
             <LinkContainer to="/">
 
-          <Navbar.Brand>
-            <img src={logo} alt="logo" />
-            E-commerce Application
+          <Navbar.Brand className="">
+           Premier Market
           </Navbar.Brand>
           </LinkContainer>
           <Navbar.Toggle />
@@ -46,7 +55,7 @@ const Header = () => {
             <SearchBox />
               <LinkContainer to='/cart'>
               <Nav.Link href="/cart">
-                <FaShoppingCart />
+                <FaShoppingCart  style={customStyles.cartLogo} />
                 Cart
                 {cartItems.length > 0 && (
                     <Badge pill bg='success' style={{ marginLeft: '5px' }}>
@@ -58,11 +67,11 @@ const Header = () => {
              
              {userInfo ? (
                <>
-               <NavDropdown title={userInfo.name} id='username'>
-                 <LinkContainer to='/profile'>
+               <NavDropdown   title={userInfo.name} id='username'>
+                 <LinkContainer   to='/profile'>
                    <NavDropdown.Item>Profile</NavDropdown.Item>
                  </LinkContainer>
-                 <NavDropdown.Item onClick={logoutHandler}>
+                 <NavDropdown.Item  onClick={logoutHandler}>
                    Logout
                  </NavDropdown.Item>
                </NavDropdown>

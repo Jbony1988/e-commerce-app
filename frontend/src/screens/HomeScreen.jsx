@@ -18,7 +18,7 @@ const HomeScreen = () => {
   });
 
   return (
-    <>
+    < >
       {!keyword ? (
         <ProductCarousel />
       ) : (
@@ -35,8 +35,8 @@ const HomeScreen = () => {
       ) : (
         <>
           <Meta  />
-          <h1>Latest Products</h1>
-          <Row>
+          <h1 className='pt-4'>Latest Products</h1>
+          <Row className='pt-2'>
             {data.products.map((product) => (
               <Col key={product._id} sm={12} md={6} lg={4} xl={3}>
                 <Product product={product} />
